@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan Digital Library</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #2c3e50; color: white; text-align: center; padding: 20px; }
+        nav { background-color: #34495e; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        section { padding: 20px; max-width: 800px; margin: auto; background: white; margin-top: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        form { display: flex; flex-direction: column; }
+        label { margin-top: 10px; }
+        input, select, button { padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #3498db; color: white; cursor: pointer; }
+        button:hover { background-color: #2980b9; }
+        #confirmation { display: none; color: green; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Roshan Digital Library</h1>
+        <p>Your gateway to digital knowledge and study spaces.</p>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#book-seat">Book a Seat</a>
+        <a href="#admission">Admission</a>
+    </nav>
+    
+    <section id="home">
+        <h2>Welcome</h2>
+        <p>Roshan Digital Library offers a serene environment for study, with digital resources and reservable seats. Book your spot or apply for admission today!</p>
+    </section>
+    
+    <section id="book-seat">
+        <h2>Book a Seat</h2>
+        <form id="booking-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            
+            <label for="time">Time Slot:</label>
+            <select id="time" required>
+                <option value="">Select</option>
+                <option value="9-11 AM">9-11 AM</option>
+                <option value="11-1 PM">11-1 PM</option>
+                <option value="2-4 PM">2-4 PM</option>
+                <option value="4-6 PM">4-6 PM</option>
+            </select>
+            
+            <label for="seat">Seat Number (1-50):</label>
+            <input type="number" id="seat" min="1" max="50" required>
+            
+            <button type="submit">Book Seat</button>
+        </form>
+        <p id="confirmation">Booking confirmed! Check your email for details.</p>
+    </section>
+    
+    <section id="admission">
+        <h2>Apply for Admission</h2>
+        <form id="admission-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+        <p id="admission-confirmation">Application submitted! We'll review and contact you soon.</p>
+    </section>
+    
+    <script>
+        // Booking form handler
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('confirmation').style.display = 'block';
+            // In a real app, send data to server here
+        });
+        
+        // Admission form handler
+        document.getElementById('admission-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('admission-confirmation').style.display = 'block';
+            // In a real app, send data to server here
+        });
+    </script>
+</body>
+</html>
